@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  --color-ancient: #e64242;
+  --color-arcana: #b2e05d;
+  --color-immortal: #e6b242;
+  --color-legendary: #e642cb;
+  --color-mythical: #8942e6;
+  --color-rare: #4542e6;
+  --color-uncommon: #6592e4;
+  --color-common: #a4b9e2;
+
+  --color-description: #dddddd;
+
+  --color-bg-roulette-window: #fff;
+  --color-bg-stone-img: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  font-family: 'Roboto';
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.list-reset {
+  list-style-type: none;
+}
+
+.button-reset {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.display-none {
+  display: none;
+}
+
+.ancient {
+  color: var(--color-ancient);
+}
+
+.arcana {
+  color: var(--color-arcana)
+}
+
+.immortal {
+  color: var(--color-immortal)
+}
+
+.legendary {
+  color: var(--color-legendary)
+}
+
+.mythical {
+  color: var(--color-mythical)
+}
+
+.rare {
+  color: var(--color-rare)
+}
+
+.uncommon {
+  color: var(--color-uncommon);
+}
+
+.common {
+  color: var(--color-common);
+}
+
+
+/* Chests */
+.chests__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.chest {
+  flex: 0 1 calc(100% / 4 - 50px * 3 / 4);
+  position: relative;
+  transition: box-shadow .6s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.chest:hover {
+  box-shadow: 0px 0px 30px 10px;
+}
+
+.chest:hover .chest__bottom {
+  transform: translateY(-100%);
+}
+
+.chest:hover .chest__img {
+  transform: scale(1.5);
+  filter: brightness(20%);
+}
+
+.chest__img {
+  display: block;
+  max-width: 100%;
+  object-position: center bottom;
+  border-radius: 10px;
+  transition: transform .6s ease, filter .6s ease;
+}
+
+.chest__bottom {
+  position: absolute;
+  transform: translateY(0);
+  padding: 10px;
+  transition: transform .6s ease;
+}
+
+.chest__description {
+  color: var(--color-description)
+}
+
+/* Roulette */
+.roulette {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.roulette__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #e4e4e4;
+  border-radius: 10px;
+}
+
+.roulette__window {
+  background-color: var(--color-bg-roulette-window);
+  border-radius: 10px;
+}
+
+.roulette__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.roulette__heading {
+  text-align: center;
+  font-size: 32px;
+}
+
+.roulette__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.stone {
+  flex: 0 1 calc(100% / 8 - 30px * 7 / 8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.stone__img {
+  max-width: 100%;
+  max-height: 100%;
+  border-top: 2px;
+  border-right: 2px;
+  border-bottom: 20px;
+  border-left: 2px;
+  border-style: solid;
+  background-color: var(--color-bg-stone-img);
+}
+
+.roulette__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(100%, -100%);
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #dddddd;
+  line-height: 1;
+  transition: color .3s ease;
+  z-index: 1000;
+}
+
+.roulette__close:hover {
+  color: #5e5e5e;
+}
