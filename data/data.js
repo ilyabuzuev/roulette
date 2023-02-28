@@ -28,37 +28,37 @@ const data = {
         {
           stoneName: "Onsidian",
           stoneRarity: "arcana",
-          stoneChance: 1,
+          stoneChance: 0.3,
           stoneImg: "./img/stones/obsidian.png"
         },
         {
           stoneName: "Amethyst",
           stoneRarity: "arcana",
-          stoneChance: 1,
+          stoneChance: 0.7,
           stoneImg: "./img/stones/amethyst.png"
         },
         {
           stoneName: "Clear Quartz",
           stoneRarity: "immortal",
-          stoneChance: 1,
+          stoneChance: 4,
           stoneImg: "./img/stones/clear-quartz.png"
         },
         {
           stoneName: "Bloodstone",
           stoneRarity: "immortal",
-          stoneChance: 1,
+          stoneChance: 5,
           stoneImg: "./img/stones/bloodstone.png"
         },
         {
           stoneName: "Lapis Lazuli",
           stoneRarity: "legendary",
-          stoneChance: 1,
+          stoneChance: 10,
           stoneImg: "./img/stones/lapis-lazuli.png"
         },
         {
           stoneName: "Fuchsite",
           stoneRarity: "mythical",
-          stoneChance: 1,
+          stoneChance: 80,
           stoneImg: "./img/stones/fuchsite.png"
         },
       ]
