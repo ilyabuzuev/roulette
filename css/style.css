@@ -53,10 +53,6 @@
   cursor: pointer;
 }
 
-.display-none {
-  display: none;
-}
-
 .ancient {
   color: var(--color-ancient);
 }
@@ -161,9 +157,21 @@
 }
 
 .roulette__window {
+  position: relative;
   background-color: var(--color-bg-roulette-window);
   border-radius: 10px;
   overflow: hidden;
+}
+
+.roulette__arrow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 3px;
+  height: 100%;
+  background-color: #4542e6;
+  box-shadow: 0px 0px 10px 1px #3a3a3a;
 }
 
 .roulette__bottom {
@@ -199,7 +207,7 @@
 }
 
 .stone {
-  flex: 0 1 calc(100% / 8 - 30px * 7 / 8);
+  flex: 0 1 calc(100% / 7 - 30px * 6 / 7);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -255,4 +263,78 @@
 
 .roulette__close:hover {
   color: #5e5e5e;
+}
+
+/* Prize */
+.prize__window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  padding: 10px;
+  background-color: #ececec;
+  border-radius: 10px;
+  z-index: 20;
+}
+
+.prize__top {
+  text-align: center;
+}
+
+.prize__img {
+  max-width: 80%;
+}
+
+.prize__name {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.prize__button {
+  position: absolute;
+  bottom: -50px;
+  padding: 6px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #6366F1;
+  background-color: #C7D2FE;
+  border-radius: 5px;
+  transition: background-color .2s ease;
+  z-index: 21;
+}
+
+.prize__button:hover {
+  background-color: #A5B4FC;
+}
+
+
+.prize__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.9;
+  z-index: 10;
+}
+
+/* Other */
+.display-none {
+  display: none;
+}
+
+.disabled {
+  color: #7a7a7a;
+  background-color: #c8c8c8;
+  pointer-events: none;
+}
+
+.disabled:hover {
+  background-color: #c8c8c8;
+  cursor: not-allowed;
 }
