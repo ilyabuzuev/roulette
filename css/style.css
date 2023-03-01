@@ -1,6 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
+  --color-main-lightest: #E2E8F0; 
+  --color-main-lighten: #CBD5E1;
+  --color-main-light: #94A3B8;
+  --color-main: #64748B;
+  --color-main-dark: #475569;
+  --color-main-darken: #334155;
+  --color-main-darkest: #1E293B;
+
+  --bgc-lightest: #fff;
+  --bgc: #e4e4e4;
+
+  --btn-bgc-main: #CBD5E1;
+  --btn-bgc-main-dark: #b9c5d4;
+  --btn-bgc-main-darken: #94A3B8;
+
+  --btn-color-main: #475569;
+
   --color-ancient: #e64242;
   --color-arcana: #b2e05d;
   --color-immortal: #e6b242;
@@ -10,16 +27,21 @@
   --color-uncommon: #6592e4;
   --color-common: #a4b9e2;
 
-  --color-description: #dddddd;
+  --color-disabled: #7a7a7a;
+  --bgc-disabled: #c8c8c8;
 
-  --color-bg-roulette-window: #fff;
-  --color-bg-stone-img: #fff;
+  --color-black: #000;
+  --color-white: #fff;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .page {
@@ -38,7 +60,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: #000;
+  background-color: var(--color-black);
   opacity: 0.9;
   z-index: 1;
 }
@@ -87,10 +109,44 @@
 
 /* Header */
 .header__container {
-  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header__logo {
+  height: 40px;
+  width: 220px;
+  background-image: url('../img/common/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.header__link {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--color-main-dark);
+  transition: color .3s ease;
+}
+
+.header__link:hover {
+  color: var(--color-main-light);
 }
 
 /* Chests */
+.chests__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.chests__heading {
+  font-size: 30px;
+  color: var(--color-main);
+}
+
 .chests__list {
   display: flex;
   flex-wrap: wrap;
@@ -115,7 +171,7 @@
 }
 
 .chest:hover .chest__img {
-  transform: scale(1.5);
+  transform: scale(1.3);
   filter: brightness(20%);
 }
 
@@ -135,7 +191,7 @@
 }
 
 .chest__description {
-  color: var(--color-description)
+  color: var(--color-main-lightest)
 }
 
 /* Roulette */
@@ -152,13 +208,13 @@
   flex-direction: column;
   gap: 10px;
   padding: 20px;
-  background-color: #e4e4e4;
+  background-color: var(--bgc);
   border-radius: 10px;
 }
 
 .roulette__window {
   position: relative;
-  background-color: var(--color-bg-roulette-window);
+  background-color: var(--bgc-lightest);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -168,10 +224,9 @@
   top: 0;
   left: 50%;
   transform: translate(-50%);
-  width: 3px;
+  width: 4px;
   height: 100%;
-  background-color: #4542e6;
-  box-shadow: 0px 0px 10px 1px #3a3a3a;
+  background-color: var(--color-main-dark);
 }
 
 .roulette__bottom {
@@ -183,6 +238,7 @@
 .roulette__heading {
   text-align: center;
   font-size: 32px;
+  color: var(--color-main);
 }
 
 .roulette__list {
@@ -196,14 +252,14 @@
   padding: 6px 24px;
   font-size: 18px;
   font-weight: 600;
-  color: #6366F1;
-  background-color: #C7D2FE;
+  color: var(--btn-color-main);
+  background-color: var(--btn-bgc-main);
   border-radius: 5px;
   transition: background-color .3s ease;
 }
 
 .roulette__button:hover {
-  background-color: #A5B4FC;
+  background-color: var(--btn-bgc-main-dark);
 }
 
 .stone {
@@ -222,7 +278,7 @@
   border-bottom: 20px;
   border-left: 2px;
   border-style: solid;
-  background-color: var(--color-bg-stone-img);
+  background-color: var(--bgc-lightest);
 }
 
 /* Stones List */
@@ -255,14 +311,14 @@
   padding: 12px;
   font-size: 20px;
   font-weight: 600;
-  color: #dddddd;
+  color: var(--color-main-lightest);
   line-height: 1;
   transition: color .3s ease;
   z-index: 1000;
 }
 
 .roulette__close:hover {
-  color: #5e5e5e;
+  color: var(--color-main-dark);
 }
 
 /* Prize */
@@ -276,7 +332,7 @@
   align-items: center;
   width: 320px;
   padding: 10px;
-  background-color: #ececec;
+  background-color: var(--bgc);
   border-radius: 10px;
   z-index: 20;
 }
@@ -300,15 +356,15 @@
   padding: 6px 24px;
   font-size: 18px;
   font-weight: 600;
-  color: #6366F1;
-  background-color: #C7D2FE;
+  color: var(--btn-color-main);
+  background-color: var(--btn-bgc-main);
   border-radius: 5px;
   transition: background-color .2s ease;
   z-index: 21;
 }
 
 .prize__button:hover {
-  background-color: #A5B4FC;
+  background-color: var(--btn-bgc-main-dark);
 }
 
 
@@ -329,8 +385,8 @@
 }
 
 .disabled {
-  color: #7a7a7a;
-  background-color: #c8c8c8;
+  color: var(--color-disabled);
+  background-color: var(--bgc-disabled);
   pointer-events: none;
 }
 

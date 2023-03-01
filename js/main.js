@@ -6,6 +6,8 @@ const overlay = document.getElementById('overlay');
 const prizeWindow = document.getElementById('prizeWindow');
 const prizeOverlay = document.getElementById('prizeOverlay');
 
+let isAnimate = false;
+
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -104,7 +106,7 @@ function createRouletteBox(chestsData, chests) {
       for (let i = 0; numberList.length < 100; i++) {
         chancesSum = chances.reduce((prev, curr) => prev + curr);
       
-        randomNumber = getRandomNumber(0, 100);
+        randomNumber = getRandomNumber(0, chancesSum);
     
         outer:
         for (let j = 0; j < stones.length; j++) {
@@ -117,7 +119,7 @@ function createRouletteBox(chestsData, chests) {
           }
         }
       }
-    
+
       return numberList;
     }
 
@@ -134,7 +136,6 @@ function createRouletteBox(chestsData, chests) {
     }
 
     function rotateTo(width, margin, id) {
-      // return (width * id + margin * id) - (width * 3 + margin * 3) - (width / 2) - (margin) + getRandomInt(1, width - 1);
       return (width * id + margin * id) - (width * 3 + margin * 2) + getRandomInt(0, width);
     }
 
@@ -187,8 +188,14 @@ function createRouletteBox(chestsData, chests) {
         if (e.target.id == 'prizeOverlay' || e.target.id == 'acceptPrizeButton') {
           prizeWindow.innerHTML = '';
           prizeWindow.className = 'prize__window display-none';
+
           prizeOverlay.classList.add('display-none');
+
           startButton.classList.remove('disabled');
+
+          stonesList.innerHTML = '';
+
+          isAnimate = false;
         }
       });
     }
@@ -213,6 +220,8 @@ function createRouletteBox(chestsData, chests) {
 
       startButton.classList.add('disabled');
 
+      isAnimate = true;
+
       renderElements(createdList);
 
       animate({
@@ -225,8 +234,6 @@ function createRouletteBox(chestsData, chests) {
         }
       });
 
-      console.log( getPrize(createdList, itemID) );
-
       setTimeout(function() {
         showPrize(createdList, itemID)
       }, 10200);
@@ -236,22 +243,28 @@ function createRouletteBox(chestsData, chests) {
 
 function closeRouletteBox() {
   rouletteClose.addEventListener('click', () => {
-    rouletteBox.innerHTML = '';
+    if (!isAnimate) {
+      rouletteBox.innerHTML = '';
 
-    overlay.classList.add('display-none');
+      overlay.classList.add('display-none');
+    }
   });
 
   overlay.addEventListener('click', () => {
-    rouletteBox.innerHTML = '';
+    if (!isAnimate) {
+      rouletteBox.innerHTML = '';
 
-    overlay.classList.add('display-none');
+      overlay.classList.add('display-none');
+    }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key == 'Escape') {
-      rouletteBox.innerHTML = '';
-
-      overlay.classList.add('display-none');
+      if (!isAnimate) {
+        rouletteBox.innerHTML = '';
+  
+        overlay.classList.add('display-none');
+      }
     }
   });
 }

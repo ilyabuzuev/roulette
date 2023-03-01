@@ -1,189 +1,158 @@
+const stones = {
+  moonstone: {
+    stoneName: "Moonstone",
+    stoneRarity: "ancient",
+    stoneChance: 0.1,
+    stoneImg: "./img/stones/moonstone.png"
+  },
+  redQuartz: {
+    stoneName: "Red Quartz",
+    stoneRarity: "ancient",
+    stoneChance: 0.2,
+    stoneImg: "./img/stones/red-quartz.png"
+  },
+  ruby: {
+    stoneName: "Ruby",
+    stoneRarity: "arcana",
+    stoneChance: 0.6,
+    stoneImg: "./img/stones/ruby.png"
+  },
+  clearQuartz: {
+    stoneName: "Clear Quartz",
+    stoneRarity: "immortal",
+    stoneChance: 1.1,
+    stoneImg: "./img/stones/clear-quartz.png"
+  },
+  bloodstone: {
+    stoneName: "Bloodstone",
+    stoneRarity: "immortal",
+    stoneChance: 1.5,
+    stoneImg: "./img/stones/bloodstone.png"
+  },
+  lapisLazuli: {
+    stoneName: "Lapis Lazuli",
+    stoneRarity: "legendary",
+    stoneChance: 4,
+    stoneImg: "./img/stones/lapis-lazuli.png"
+  },
+  fuchsite: {
+    stoneName: "Fuchsite",
+    stoneRarity: "legendary",
+    stoneChance: 5,
+    stoneImg: "./img/stones/fuchsite.png"
+  },
+  jade: {
+    stoneName: "Jade",
+    stoneRarity: "mythical",
+    stoneChance: 8,
+    stoneImg: "./img/stones/jade.png"
+  },
+  turquoise: {
+    stoneName: "Turquoise",
+    stoneRarity: "mythical",
+    stoneChance: 8.5,
+    stoneImg: "./img/stones/turquoise.png"
+  },
+  obsidian: {
+    stoneName: "Obsidian",
+    stoneRarity: "rare",
+    stoneChance: 14,
+    stoneImg: "./img/stones/obsidian.png"
+  },
+  amethyst: {
+    stoneName: "Amethyst",
+    stoneRarity: "rare",
+    stoneChance: 15,
+    stoneImg: "./img/stones/amethyst.png"
+  },
+  citrine: {
+    stoneName: "Citrine",
+    stoneRarity: "rare",
+    stoneChance: 15.5,
+    stoneImg: "./img/stones/citrine.png"
+  },
+  jasper: {
+    stoneName: "Jasper",
+    stoneRarity: "uncommon",
+    stoneChance: 20,
+    stoneImg: "./img/stones/jasper.png"
+  },
+  tigersEye: {
+    stoneName: "Tiger's Eye",
+    stoneRarity: "common",
+    stoneChance: 90,
+    stoneImg: "./img/stones/tigers-eye.png"
+  }
+}
+
 const data = {
   chests: [
     {
       chestID: 0,
       chestName: "Сундук древних камней",
       chestRarity: "ancient",
-      chestImg: "./img/chests/ancient-chest.jpg",
+      chestImg: "./img/chests/chest.jpg",
       chestDescription: "Камни, находящиеся в данном сундуке почти невозможно найти",
       chestStones: [
-        {
-          stoneName: "Moonstone",
-          stoneRarity: "ancient",
-          stoneChance: 0.1,
-          stoneImg: "./img/stones/moonstone.png"
-        },
-        {
-          stoneName: "Red Quartz",
-          stoneRarity: "ancient",
-          stoneChance: 0.2,
-          stoneImg: "./img/stones/red-quartz.png"
-        },
-        {
-          stoneName: "Lapis Lazuli",
-          stoneRarity: "legendary",
-          stoneChance: 2,
-          stoneImg: "./img/stones/lapis-lazuli.png"
-        },
-        {
-          stoneName: "Fuchsite",
-          stoneRarity: "mythical",
-          stoneChance: 5, 
-          stoneImg: "./img/stones/fuchsite.png" 
-        },
-        {
-          stoneName: "Obsidian",
-          stoneRarity: "rare",
-          stoneChance: 10,
-          stoneImg: "./img/stones/obsidian.png"
-        },
-        {
-          stoneName: "Amethyst",
-          stoneRarity: "rare",
-          stoneChance: 15,
-          stoneImg: "./img/stones/amethyst.png"
-        },
-        {
-          stoneName: "Clear Quartz",
-          stoneRarity: "uncommon",
-          stoneChance: 70,
-          stoneImg: "./img/stones/clear-quartz.png"
-        },
+        stones.moonstone,
+        stones.redQuartz,
+        stones.lapisLazuli,
+        stones.turquoise,
+        stones.obsidian,
+        stones.amethyst,
+        stones.jasper,
+        stones.tigersEye,
       ]
     },
     {
       chestID: 1,
       chestName: "Сундук редких камней",
       chestRarity: "arcana",
-      chestImg: "./img/chests/arcana-chest.jpg",
+      chestImg: "./img/chests/chest.jpg",
       chestDescription: "Они действительно редкие",
       chestStones: [
-        {
-          stoneName: "Ruby",
-          stoneRarity: "arcana",
-          stoneChance: 1,
-          stoneImg: "./img/stones/ruby.png"
-        },
-        {
-          stoneName: "Onsidian",
-          stoneRarity: "arcana",
-          stoneChance: 1,
-          stoneImg: "./img/stones/obsidian.png"
-        },
-        {
-          stoneName: "Amethyst",
-          stoneRarity: "arcana",
-          stoneChance: 1,
-          stoneImg: "./img/stones/amethyst.png"
-        },
-        {
-          stoneName: "Clear Quartz",
-          stoneRarity: "immortal",
-          stoneChance: 1,
-          stoneImg: "./img/stones/clear-quartz.png"
-        },
-        {
-          stoneName: "Fuchsite",
-          stoneRarity: "legendary",
-          stoneChance: 1,
-          stoneImg: "./img/stones/fuchsite.png"
-        },
-        {
-          stoneName: "Jade",
-          stoneRarity: "mythical",
-          stoneChance: 1,
-          stoneImg: "./img/stones/jade.png"
-        },
-        {
-          stoneName: "Citrine",
-          stoneRarity: "rare",
-          stoneChance: 1,
-          stoneImg: "./img/stones/citrine.png"
-        },
+        stones.ruby,
+        stones.fuchsite,
+        stones.turquoise,
+        stones.obsidian,
+        stones.amethyst,
+        stones.citrine,
+        stones.tigersEye,
       ]
     },
     {
       chestID: 2,
       chestName: "Сундук редких камней",
       chestRarity: "immortal",
-      chestImg: "./img/chests/immortal-chest.jpg",
+      chestImg: "./img/chests/chest.jpg",
       chestDescription: "Они действительно редкие",
       chestStones: [
-        {
-          stoneName: "Bloodstone",
-          stoneRarity: "immortal",
-          stoneChance: 1,
-          stoneImg: "./img/stones/bloodstone.png"
-        },
-        {
-          stoneName: "Clear Quartz",
-          stoneRarity: "immortal",
-          stoneChance: 1,
-          stoneImg: "./img/stones/clear-quartz.png"
-        },
-        {
-          stoneName: "Fuchsite",
-          stoneRarity: "legendary",
-          stoneChance: 1,
-          stoneImg: "./img/stones/fuchsite.png"
-        },
-        {
-          stoneName: "Turquoise",
-          stoneRarity: "mythical",
-          stoneChance: 1,
-          stoneImg: "./img/stones/turquoise.png"
-        },
-        {
-          stoneName: "Jade",
-          stoneRarity: "rare",
-          stoneChance: 1,
-          stoneImg: "./img/stones/jade.png"
-        },
+        stones.clearQuartz,
+        stones.bloodstone,
+        stones.fuchsite,
+        stones.turquoise,
+        stones.obsidian,
+        stones.amethyst,
+        stones.jasper,
+        stones.tigersEye,
       ]
     },
     {
       chestID: 3,
       chestName: "Сундук редких камней",
       chestRarity: "legendary",
-      chestImg: "./img/chests/legendary-chest.jpg",
+      chestImg: "./img/chests/chest.jpg",
       chestDescription: "Они действительно редкие",
       chestStones: [
-        {
-          stoneName: "Fuchsite",
-          stoneRarity: "legendary",
-          stoneChance: 1,
-          stoneImg: "./img/stones/fuchsite.png"
-        },
-        {
-          stoneName: "Turquoise",
-          stoneRarity: "mythical",
-          stoneChance: 1,
-          stoneImg: "./img/stones/turquoise.png"
-        },
-        {
-          stoneName: "Jade",
-          stoneRarity: "rare",
-          stoneChance: 1,
-          stoneImg: "./img/stones/jade.png"
-        },
-        {
-          stoneName: "Citrine",
-          stoneRarity: "uncommon",
-          stoneChance: 1,
-          stoneImg: "./img/stones/citrine.png"
-        },
-        {
-          stoneName: "Jasper",
-          stoneRarity: "uncommon",
-          stoneChance: 1,
-          stoneImg: "./img/stones/jasper.png"
-        },
-        {
-          stoneName: "Tiger's Eye",
-          stoneRarity: "common",
-          stoneChance: 1,
-          stoneImg: "./img/stones/tigers-eye.png"
-        },
+        stones.lapisLazuli,
+        stones.fuchsite,
+        stones.jade,
+        stones.turquoise,
+        stones.obsidian,
+        stones.amethyst,
+        stones.citrine,
+        stones.jasper,
+        stones.tigersEye,
       ]
     },
   ]
