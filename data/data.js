@@ -1,7 +1,7 @@
 const stones = {
   moonstone: {
     stoneName: "Moonstone",
-    stoneRarity: "ancient",
+    stoneRarity: "universe",
     stoneChance: 0.1,
     stoneImg: "./img/stones/moonstone.png"
   },

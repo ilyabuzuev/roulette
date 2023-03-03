@@ -106,6 +106,63 @@ a {
   cursor: pointer;
 }
 
+@keyframes anim {
+  0% {
+    color: rgb(228, 58, 58);
+  }
+
+  10% {
+    color: rgb(228, 126, 58);
+  }
+
+  20% {
+    color: rgb(228, 202, 58);
+  }
+
+  30% {
+    color: rgb(134, 228, 58);
+  }
+
+  30% {
+    color: rgb(58, 228, 185);
+  }
+
+  40% {
+    color: rgb(58, 174, 228);
+  }
+
+  50% {
+    color: rgb(58, 112, 228);
+  }
+
+  60% {
+    color: rgb(89, 58, 228);
+  }
+
+  70% {
+    color: rgb(160, 58, 228);
+  }
+
+  80% {
+    color: rgb(194, 58, 228);
+  }
+
+  80% {
+    color: rgb(228, 58, 191);
+  }
+
+  100% {
+    color: rgb(228, 58, 100);
+  }
+}
+
+.universe {
+  animation-name: anim;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
 .ancient {
   color: var(--color-ancient);
 }
@@ -450,7 +507,7 @@ a {
   bottom: 0;
   left: 0;
   background: #000;
-  opacity: 0.9;
+  opacity: 1;
   z-index: 10;
 }
 
