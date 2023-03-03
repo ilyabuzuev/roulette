@@ -1,23 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 :root {
-  --color-main-lightest: #E2E8F0; 
-  --color-main-lighten: #CBD5E1;
-  --color-main-light: #94A3B8;
-  --color-main: #64748B;
-  --color-main-dark: #475569;
-  --color-main-darken: #334155;
-  --color-main-darkest: #1E293B;
-
-  --bgc-lightest: #fff;
-  --bgc: #e4e4e4;
-
-  --btn-bgc-main: #CBD5E1;
-  --btn-bgc-main-dark: #b9c5d4;
-  --btn-bgc-main-darken: #94A3B8;
-
-  --btn-color-main: #475569;
-
   --color-ancient: #e64242;
   --color-arcana: #b2e05d;
   --color-immortal: #e6b242;
@@ -26,9 +9,6 @@
   --color-rare: #4542e6;
   --color-uncommon: #6592e4;
   --color-common: #a4b9e2;
-
-  --color-disabled: #7a7a7a;
-  --bgc-disabled: #c8c8c8;
 
   --color-black: #000;
   --color-white: #fff;
@@ -44,8 +24,59 @@ a {
   text-decoration: none;
 }
 
-.page {
+.light {
+  --color-main-lightest: #E2E8F0; 
+  --color-main-lighten: #CBD5E1;
+  --color-main-light: #94A3B8;
+  --color-main: #64748B;
+  --color-main-dark: #475569;
+  --color-main-darken: #334155;
+  --color-main-darkest: #1E293B;
+
+  --color: #333;
+
+  --bgc-lightest: #fff;
+  --bgc: #e4e4e4;
+
+  --btn-bgc-main: #CBD5E1;
+  --btn-bgc-main-dark: #64748B;
+  --btn-bgc-main-darken: #475569;
+
+  --btn-color-main: #475569;
+
+  --color-disabled: #7a7a7a;
+  --bgc-disabled: #c8c8c8;
+
+  /* --icon-bgc:  */
+}
+
+.dark {
+  --color-main-lightest: #E2E8F0; 
+  --color-main-lighten: #CBD5E1;
+  --color-main-light: #94A3B8;
+  --color-main: #64748B;
+  --color-main-dark: #475569;
+  --color-main-darken: #334155;
+  --color-main-darkest: #1E293B;
+
+  --color: #fff;
+
+  --bgc-lightest: #333;
+  --bgc: #222;
+
+  --btn-bgc-main: #CBD5E1;
+  --btn-bgc-main-dark: #94A3B8;
+  --btn-bgc-main-darken: #94A3B8;
+
+  --btn-color-main: #475569;
+
+  --color-disabled: #7a7a7a;
+  --bgc-disabled: #c8c8c8;
+}
+
+.page__body {
   font-family: 'Roboto';
+  background-color: var(--bgc-lightest);
 }
 
 .container {
@@ -122,6 +153,50 @@ a {
   background-image: url('../img/common/logo.svg');
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.theme__button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px;
+  border-radius: 20px;
+  background-color: var(--bgc);
+  z-index: 1;
+}
+
+.theme__active {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background-color: var(--color-main-darken);
+  border-radius: 50%;
+  transition: right .2s ease;
+  z-index: 0;
+}
+
+.theme__icon {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  z-index: 1;
+}
+
+.dark .theme__icon > * {
+  stroke: white;
+}
+
+.theme__icon.active > * {
+  stroke: white;
 }
 
 .header__link {
