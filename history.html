@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/themeToggle.js" type="module" defer></script>
-  <script src="./js/main.js" type="module" defer></script>
-  <title>Stone Roulette</title>
+  <script src="./js/prizeHistory.js" type="module" defer></script>
+  <title>Stone Roulette | История выпадений</title>
 </head>
 <body class="page__body" id="pageBody">
   <header class="header">
@@ -31,19 +31,15 @@
             </button>
           </div>
         </div>
+        <button class="header__button button-reset" id="clearPrizeHistoryButton">Очистить историю</button>
       </div>
     </div>
   </header>
   <main class="main">
     <section class="history">
       <div class="history__container container">
-        <ul class="history__list list-reset">
-          <li class="history__item item-history">
-            <p class="item-history__name universe">Moonstone</p>
-            <img class="item-history__img" src="./img/stones/moonstone.png" alt="Moonstone">
-            <p class="item-history__description">Этот камень самый редкий, найти его почти невозможно</p>
-          </li>
-        </ul>
+        <h2 class="history__heading">История выпадений</h2>
+        <ul class="history__list list-reset" id="historyList"></ul>
       </div>
     </section>
   </main>
