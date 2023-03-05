@@ -34,6 +34,7 @@ a {
   --color-main-darkest: #1E293B;
 
   --color: #333;
+  --color-description: #333;
 
   --bgc-lightest: #fff;
   --bgc: #e4e4e4;
@@ -60,6 +61,7 @@ a {
   --color-main-darkest: #1E293B;
 
   --color: #fff;
+  --color-description: #ebebeb;
 
   --bgc-lightest: #333;
   --bgc: #222;
@@ -511,7 +513,40 @@ a {
   z-index: 10;
 }
 
-/* Other */
+/* History */
+.history {
+  padding: 60px 0px;
+}
+
+.history__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.item-history {
+  flex: 0 1 calc(100% / 5 - 30px * 4 / 5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-history__name {
+  font-size: 3vmin;
+  font-weight: 600;
+}
+
+.item-history__img {
+  max-width: 75%;
+}
+
+.item-history__description {
+  font-size: 1.8vmin;
+  color: var(--color-description);
+  text-align: center;
+}
+
+/* Common */
 .display-none {
   display: none;
 }

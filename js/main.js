@@ -204,6 +204,26 @@ function renderRouletteBox(chestContent) {
     stonesList.innerHTML = '';
   }
 
+  function savePrizeToHistory(list, id) {
+    let prize = list[id];
+    let prizeHistory = [];
+    let currentPrizeHistory;
+
+    if (!localStorage.getItem('prizeHistory')) {
+      prizeHistory.push(prize);
+    } else {
+      currentPrizeHistory = JSON.parse(localStorage.getItem('prizeHistory'));
+    
+      currentPrizeHistory.forEach(prize => {
+        prizeHistory.push(prize);
+      });
+
+      prizeHistory.push(prize);
+    }
+
+    localStorage.setItem('prizeHistory', JSON.stringify(prizeHistory));
+  }
+
   closeRouletteBox();
 
   const startButton = document.getElementById('startButton');
@@ -223,6 +243,8 @@ function renderRouletteBox(chestContent) {
     isAnimate = true;
 
     renderElements(createdList);
+
+    savePrizeToHistory(createdList, itemID);
 
     animate({
       duration: 10000,
