@@ -1,4 +1,4 @@
-import data from "../data/data.js";
+import { data } from "../data/data.js";
 
 const chestsList = document.getElementById('chestsList');
 const rouletteBox = document.getElementById('rouletteBox');

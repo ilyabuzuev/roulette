@@ -12,12 +12,16 @@
 <body class="page__body" id="pageBody">
   <header class="header">
     <div class="header__container container">
-      <div class="header__left">
-        <a href="./index.html">
-          <div class="header__logo"></div>
-        </a>
-      </div>
-      <div class="header__right">
+      <a href="./index.html">
+        <div class="header__logo"></div>
+      </a>
+      <nav class="header__nav nav">
+        <ul class="nav__list">
+          <a class="header__link" href="./history.html">История выпадений</a>
+          <a class="header__link" href="./information.html">Информация</a>
+        </ul>
+      </nav>
+      <div class="header__buttons">
         <div class="theme">
           <div class="theme__toggle">
             <button class="theme__button button-reset" id="themeToggleButton">
@@ -31,14 +35,16 @@
             </button>
           </div>
         </div>
-        <button class="header__button button-reset" id="clearPrizeHistoryButton">Очистить историю</button>
       </div>
     </div>
   </header>
   <main class="main">
     <section class="history">
       <div class="history__container container">
-        <h2 class="history__heading">История выпадений</h2>
+        <div class="history__heading">
+          <h2 class="section__title">Истоирия выпадений</h2>
+          <button class="header__button button-reset" id="clearPrizeHistoryButton">Очистить историю</button>
+        </div>
         <ul class="history__list list-reset" id="historyList"></ul>
       </div>
     </section>

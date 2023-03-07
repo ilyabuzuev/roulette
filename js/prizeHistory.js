@@ -10,10 +10,9 @@ const prizeHistory = () => {
     if (prizeHistory) {
       prizeHistory.forEach((prize, index) => {
         historyList.innerHTML += `
-          <li class="history__item item-history" data-id="${index}">
-            <p class="item-history__name ${prize[3]}">${prize[0]}</p>
+          <li class="history__item item-history ${prize[3]}" data-id="${index}">
+            <p class="item-history__name">${prize[0]}</p>
             <img class="item-history__img" src=${prize[2]} alt=${prize[0]}>
-            <p class="item-history__description">${prize[5]}</p>
           </li>
         `
       });
